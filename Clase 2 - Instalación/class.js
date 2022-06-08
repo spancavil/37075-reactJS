@@ -37,3 +37,12 @@ const personajesCopia = [...personajes]
 console.log(persona2);
 
 //Función map, find
+const personajesProcesados = personajes.map(personaje => {
+    return `<p>${personaje}</p>`
+})
+
+console.log(personajesProcesados);
+
+const personajeEncontrado = personajes.find(personaje => personaje === "nautilus")
+
+console.log(personajeEncontrado);
