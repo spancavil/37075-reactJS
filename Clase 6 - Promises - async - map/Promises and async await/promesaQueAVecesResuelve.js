@@ -1,7 +1,7 @@
 const promesa = new Promise ((accept, reject) => {
     console.log("Hola en promise");
-    const aceptor = Math.random();
-    if (aceptor > 0.5){
+    const aceptor = Math.random()*100;
+    if (aceptor > 50){
         accept({value: "Se acepta la promesa"})
     }
     reject({value: "Se rechaza la promesa"})

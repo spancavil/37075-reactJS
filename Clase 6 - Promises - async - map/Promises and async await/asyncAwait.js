@@ -1,4 +1,4 @@
-
+//IIFE
 (async () => {
 
     //Defino la promise
@@ -19,5 +19,7 @@
         console.log("Hubo un error")
         console.log(error)
     }
+
+    console.log("Continua la ejecución del programa")
     
 })()

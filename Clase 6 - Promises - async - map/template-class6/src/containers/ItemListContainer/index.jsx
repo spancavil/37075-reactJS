@@ -1,46 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import ItemCount from '../../components/ItemCount';
+import ItemList from '../../components/ItemList';
 // import yerbaMate from '../../assets/yerba-mate.webp';
 
-const ItemListContainer = ({ greeting, children }) => {
+const ItemListContainer = ({ greeting }) => {
 
-  //let color = "blue";
-  const [color, setColor] = useState("blue");
-
-  const cambiarColor = () => {
-    // color = "red";
-    // console.log(color)
-    if (color === "blue") setColor("red")
-    else setColor("blue")
-  }
+  const [productos, setProductos] = useState(null)
 
   useEffect(() => {
-    console.log("Se montó/actualizó el componente")
-  }, [color])
-  
-  useEffect(() => {
-    //Se desmonta el componente
-    return () => {
-      console.log("Se está desmontando el ItemListContainer");
+
+    const getProductos = async () => {
+      try {
+        const response = await fetch('/mocks/data.json');
+        const data = await response.json();
+        console.log(data);
+        setProductos(data);
+      } catch (error) {
+        console.log("Hubo un error:");
+        console.log(error);
+      }
     }
+
+    getProductos()
+
   }, [])
 
-  console.log("Se rerenderiza el componente")
-
-  const handleAdd = () => {
-    console.log("Se agrego al carrito")
-  }
+  console.log(productos);
 
   return (
-    <div style={{ backgroundColor: color }}>
-      {/* {children} */}
+    <div>
       <p>{greeting}</p>
-      <p>{color}</p>
-      <button onClick={cambiarColor}>
-        Cambiar el color a red
-      </button>
-      <ItemCount handleAdd={handleAdd} initialStock={10}/>
-      {/* <img src='/assets/yerba-mate.webp' alt="yerba"/> */}
+      {productos ?
+        <ItemList products={productos} />
+        :
+        null
+      }
     </div>
   )
 }
