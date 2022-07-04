@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 const ModalConEscape = ({handleClose}) => {
 
     useEffect(() => {
+
         const handleEsc = (evt) => {
             if (evt.keyCode === 27) {
                 console.log('will close')
@@ -12,13 +13,16 @@ const ModalConEscape = ({handleClose}) => {
         };
 
         window.addEventListener('keydown', handleEsc);
+
         return () => {
             window.removeEventListener('keydown', handleEsc);
         };
+
     }, [])
 
-    const handleClick = (e) => {
-        console.log(e);
+    const handleClick = (evento) => {
+        console.log(evento);
+        console.log(evento.nativeEvent)
     }
 
     return (
