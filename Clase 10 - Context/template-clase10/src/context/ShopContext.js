@@ -6,8 +6,29 @@ const ShopProvider = ({ children }) => {
 
     const [estadoA, setEstadoA] = useState("Valor por defecto")
 
+    const [cart, setCart] = useState([]);
+
+    //Agregar un item al carrito, acorde a la cantidad
+    const addItem = (producto, cantidad) => {
+        console.log(producto, cantidad);
+        const productoRepetido = isInCart(producto);
+        console.log(productoRepetido);
+        if (productoRepetido) {
+            productoRepetido.quantity += cantidad
+            setCart([...cart])
+        } else {
+            //Es útil cuando el producto no está presente en el carrito
+            setCart([...cart, {...producto, quantity: cantidad}])
+        }
+
+    }
+
+    const isInCart = (producto) => {
+        return cart.find(elemento => elemento.id === producto.id)
+    }
+
     return (
-        <Shop.Provider value={{estadoA, setEstadoA}}>
+        <Shop.Provider value={{estadoA, setEstadoA, addItem, cart}}>
             {children}
         </Shop.Provider>
     )
