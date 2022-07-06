@@ -1,0 +1,4 @@
+Configurar a mano el shop provider, y dejar el template base.
+Configurar algunas funcionalidades útiles en el Context
+
+https://reactjs.org/docs/context.html => Docu de Context
