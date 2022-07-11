@@ -9,13 +9,14 @@ const CounterContainer = () => {
     }
 
     const [state, setState] = useState(false)
+
     const counters = [
         {
             onConfirm: React.useCallback(handleConfirm, []),
             maxQuantity: 10
         },
         {
-            onConfirm: React.useCallback(handleConfirm, []),
+            onConfirm: handleConfirm,
             maxQuantity: 15
         },
         {
