@@ -1,0 +1,5 @@
+https://firebase.google.com/docs/web/setup => Firebase for web
+
+https://jsmobiledev.com/article/ionic-firebase-performance/ => Thinking in noSQL terms
+
+https://create-react-app.dev/docs/adding-custom-environment-variables/ => environment variables
