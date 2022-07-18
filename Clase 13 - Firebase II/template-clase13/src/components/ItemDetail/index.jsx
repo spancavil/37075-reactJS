@@ -8,7 +8,6 @@ const ItemDetail = ({ product }) => {
 
     const navigate = useNavigate();
 
-    product.stock = 10;
     const [qtyAdded, setQtyAdded] = useState(0);
 
     const {addItem} = useContext(Shop)

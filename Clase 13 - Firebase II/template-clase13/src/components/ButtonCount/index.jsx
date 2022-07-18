@@ -12,6 +12,14 @@ const ButtonCount = ({ onConfirm, maxQuantity }) => {
             alert("Value > maxQuantity")
         }
     }
+
+    const handleAdd = () => {
+        if (value < maxQuantity) {
+            setValue(value + 1)
+        }
+    }
+
+
     return (
         <div
             style={{
@@ -19,7 +27,7 @@ const ButtonCount = ({ onConfirm, maxQuantity }) => {
                 flexDirection: 'row',
             }}
         >
-            <button onClick={() => setValue(value => value+1)}>+</button>
+            <button onClick={handleAdd}>+</button>
             <span>{value}</span>
             <button onClick={() => setValue(value => value-1)}>-</button>
             <button onClick={handleConfirm}>Confirm</button>
