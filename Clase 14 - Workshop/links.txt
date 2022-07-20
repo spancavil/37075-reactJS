@@ -1,0 +1,3 @@
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet => Cheatsheet MD
+https://www.freecodecamp.org/news/the-react-cheatsheet/ => React Cheatsheet
+https://www.pluralsight.com/guides/deploy-a-react-app-on-a-server => Deploy apps
