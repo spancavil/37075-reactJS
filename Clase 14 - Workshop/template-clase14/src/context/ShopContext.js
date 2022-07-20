@@ -4,8 +4,6 @@ export const Shop = createContext();
 
 const ShopProvider = ({ children }) => {
 
-    const [estadoA, setEstadoA] = useState("Valor por defecto")
-
     const [cart, setCart] = useState([]);
 
     //Agregar un item al carrito, acorde a la cantidad
@@ -20,7 +18,6 @@ const ShopProvider = ({ children }) => {
             //Es útil cuando el producto no está presente en el carrito
             setCart([...cart, {...producto, quantity: cantidad}])
         }
-
     }
 
     const removeItem = (id) => {
@@ -33,7 +30,7 @@ const ShopProvider = ({ children }) => {
     }
 
     return (
-        <Shop.Provider value={{estadoA, setEstadoA, addItem, removeItem, cart}}>
+        <Shop.Provider value={{addItem, removeItem, cart}}>
             {children}
         </Shop.Provider>
     )

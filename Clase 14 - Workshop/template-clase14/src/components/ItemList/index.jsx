@@ -1,14 +1,7 @@
-import React, { useContext } from 'react'
-import { Shop } from '../../context/ShopContext'
+import React from 'react'
 import Item from '../Item'
 
 const ItemList = ({ products }) => {
-
-  const {setEstadoA} = useContext(Shop)
-
-  const handleChangeState = () => {
-    setEstadoA("Otro valor")
-  }
 
   return (
     <div style={{
@@ -20,7 +13,6 @@ const ItemList = ({ products }) => {
       {products.map(producto => {
         return <Item product={producto} key={producto.id} />
       })}
-      <button onClick={handleChangeState}>Cambio estado A</button>
     </div>
   )
 }

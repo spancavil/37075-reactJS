@@ -1,7 +1,5 @@
-import { addDoc, collection } from 'firebase/firestore';
 import React, { useContext } from 'react'
 import { Shop } from '../../context/ShopContext'
-import { db } from '../../firebase/config';
 import ordenGenerada from '../../utils/generarOrden';
 import guardarOrden from '../../utils/guardarOrden';
 
